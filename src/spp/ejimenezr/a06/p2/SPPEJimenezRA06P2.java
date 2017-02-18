@@ -15,14 +15,31 @@ public class SPPEJimenezRA06P2 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        int opEntrada;
-        Scanner kb = new Scanner(System.in);
-        System.out.println("Desea realizar una sumatoria de numeros positivos? 1=Si, 2=No");
-        opEntrada=kb.nextInt();
+        int num;
+        num=solicitaNumero();
+        calcularFactorial(num);
     }
-    static double calcularFactorial(double num){
-        for(){
+    public static int solicitaNumero(){
+        int num, opEntrada;
+        Scanner kb= new Scanner(System.in);
+        System.out.println("Introduce un numero para calcular Factorial");
+        num=kb.nextInt();
+        if(num<1 || num>10){
+            System.out.println("Ese número se encuentra fuera de rango!!");
+            solicitaNumero();
+        }else{
             
-        } //For
-    } //Metodo
+        }
+        return num;
+    } 
+    public static void calcularFactorial(int num){
+        int fact, cont;
+        cont=1;
+        fact=1;
+        do{
+            cont++;
+            fact=fact*cont;
+        }while(cont<num);
+        System.out.println("El factorial del número es "+fact);
+    }
 }
